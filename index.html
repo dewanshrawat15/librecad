@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="bootstrap.js"></script>
+	<title>LibreCAD</title>
+	<style type="text/css">
+		
+	.navbar{
+		border-radius: 0;
+		position: fixed;
+		z-index: 10;
+		opacity: 0.9;
+		width: 100vw;
+	}
+
+	.activated-nav{
+		transition: 300ms;
+		opacity: 1;
+	}
+
+	.navbar .navbar-header .navbar-brand{
+		color: #fff;
+		margin: 20px 0 20px 0;
+		font-size: 20px;
+		transition: 300ms;
+		font-family: 'Raleway';
+	}
+
+	.navbar .navbar-nav li a{
+		color: #fff;
+		margin: 20px 0 20px 0;
+		font-size: 15px;
+		transition: 300ms;
+		font-family: 'Raleway';
+	}
+
+	.navbar .navbar-nav li a:hover{
+		background: #4c4c4c;
+		border-radius: 12px;
+		transition: 300ms;
+		font-family: 'Raleway';
+	}
+
+	.hero{
+		padding: 280px 0 280px 0;
+		background: #ff9800;
+	}
+
+	.hero-title{
+		font-family: 'Raleway';
+		font-size: 42px;
+		letter-spacing: 2px;
+		color: #fff;
+	}
+
+	.line{
+		width: 360px;
+		height: 2px;
+		background: #fff;
+		outline: none;
+		border: 0;
+	}
+
+	.tagline{
+		font-size: 16px;
+		font-family: 'Raleway';
+		color: #fff;
+		text-align: right;
+	}
+
+	.arrow{
+		position: absolute;
+		left: 50%;
+		top: 80%;
+		transform: translate(-50%, -50%) rotate(45deg);
+		width: 3em;
+		height: 3em;
+		cursor: pointer;
+		border-right: 2px solid #fff;
+		border-bottom: 2px solid #fff;
+	}
+
+	.about{
+		padding: 160px 0 160px 0;
+		background: #f8f8f8;
+	}
+
+	.about-title{
+		font-size: 24px;
+		font-family: 'Raleway';
+		color: #13171c;
+	}
+
+	.about-line{
+		width: 360px;
+		height: 1px;
+		background: #13171c;
+		outline: none;
+		border: 0;
+	}
+
+	.about-text{
+		font-family: 'Raleway';
+		font-size: 20px;
+	}
+
+	.links-section{
+		padding: 200px 0 200px 0;
+		background: #fff;
+	}
+
+	.links-title{
+		font-size: 28px;
+		font-family: 'Raleway';
+		color: #13171c;
+	}
+
+	.links-line{
+		width: 360px;
+		height: 1px;
+		background: #13171c;
+		outline: none;
+		border: 0;
+	}
+
+	.links-text{
+		font-family: 'Raleway';
+		font-size: 20px;
+	}
+
+	.fa-icon{
+		font-size: 64px;
+	}
+
+	.links-block{
+		color: #13171c;
+		transition: 300ms;
+	}
+
+	.forum-block:hover{
+		color: #ff9800;
+		transition: 300ms;
+		cursor: pointer;
+	}
+
+	.git-block:hover{
+		color: #3f51b5;
+		cursor: pointer;
+		transition: 300ms;
+	}
+
+	.yt-block:hover{
+		color: #c4302b;
+		cursor: pointer;
+		transition: 300ms;
+	}
+
+	</style>
+	<script type="text/javascript">
+		
+		$(function(){
+			$(window).scroll(function(){
+				var y=$('html, body').scrollTop();
+				if(y>120){
+					$('.navbar').addClass('activated-nav')
+				}
+				else{
+					$('.navbar').removeClass('activated-nav')
+				}
+			})
+
+			$('.arrow').click(function(){
+				$('html, body').animate({scrollTop: $('.about').offset().top}, 1500)
+			})
+
+			$('.forum-block').click(function(){
+				window.open("http://librecad.org/cms/home/get-help/forum.html")
+			})
+
+			$('.git-block').click(function(){
+				window.open("https://github.com/LibreCAD/LibreCAD")
+			})
+
+			$('.yt-block').click(function(){
+				window.open("http://www.youtube.com/results?search_query=librecad")
+			})
+
+			$('.navbar .navbar-nav .navbar-brand').click(function(){
+				$('html, body').animate({scrollTop: $('.hero').offset().top}, 1500)
+			})
+		})
+
+	</script>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand">LibreCAD</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="">Home</a></li>
+        <li><a href="http://librecad.org/cms/home/features.html" target="_blank">Features</a></li>
+        <li><a href="http://librecad.org/cms/home/get-help.html" target="_blank">Get Help</a></li>
+        <li><a href="http://librecad.org/cms/home/get-involved.html" target="_blank">Get Involved</a></li>
+        <li><a href="http://blog.librecad.org" target="_blank">News</a></li>
+        <li><a href="http://wiki.librecad.org" target="_blank">Wiki</a></li>
+        <li><a href="http://librecad.org/cms/home/about.html" target="_blank">About</a></li>
+        <li><a href="http://librecad.org/cms/home/installation/windows.html" target="_blank">Installation</a></li> 
+        <li><a href="http://librecad.org/cms/home/from-source.html" target="_blank">From Source</a></li> 
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="hero">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 text-center hero-title">LibreCAD</div>
+		</div>
+		<div class="row">
+			<hr class="col-md-6 col-md-offset-4 line" />
+		</div>
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4 tagline">OpenSource 2D-CAD</div>
+		</div>
+	</div>
+	<br><br><br>
+	<div class="arrow"></div>
+</div>
+<div class="about">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4 text-center about-title">What Is LibreCAD</div>
+		</div>
+		<div class="row">
+			<hr class="col-md-4 about-line col-md-offset-4" />
+		</div>
+		<br><br>
+		<div class="row">
+			<p class="col-md-10 about-text col-md-offset-1 text-center">LibreCAD is a free Open Source CAD application for Windows, Apple and Linux. Support and documentation is free from our large, dedicated community of users, contributors and developers. You, too, can also get involved!</p>
+		</div>
+	</div>
+</div>
+<div class="links-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4 text-center links-title">Quick Links</div>
+		</div>
+		<div class="row">
+			<hr class="col-md-4 links-line col-md-offset-4" />
+		</div>
+		<br><br>
+		<div class="row">
+			<p class="col-md-10 links-text col-md-offset-1">Here are some links which we think might be useful: </p>
+		</div>
+		<br><br>
+		<div class="row">
+			<div class="col-md-offset-3 col-md-2 links-block forum-block text-center"><i class="fa fa-icon fa-forumbee"></i></div>
+			<div class="col-md-2 links-block git-block text-center"><i class="fa fa-icon fa-github"></i></div>
+			<div class="col-md-2 links-block yt-block text-center"><i class="fa fa-icon fa-youtube"></i></div>
+		</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
